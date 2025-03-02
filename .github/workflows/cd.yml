@@ -24,6 +24,20 @@ jobs:
           # Build app for web
           - name: Build flutter app for web 🛜
             run: flutter build web
+
+          # Commit the changes to the client repository
+          - name: Setup git credentials
+            run: |
+              git config --global user.email "teste@gmail.com"
+              git config --global user.name "teste"
+          
+          - name: Add client repository as remote
+            run: |
+              git remote add client https://x-access-token:${{ secrets.CLIENT_REPO_TOKEN }}@github.com/DaniCFrq/cicd-clientrepo.git
+
+          - name: Push changes to client repository
+            run: |
+              git push client HEAD:main
           
           # Authenticates in GCP with the provided user credentials.
           # Provides secure, temporary credentials for GCP.
