@@ -28,9 +28,11 @@ jobs:
           # Commit the changes to the client repository
           - name: Setup git credentials
             run: |
-              git config --global user.email "teste@gmail.com"
-              git config --global user.name "teste"
-          
+              git config --global user.email "daniel.fraqtory@gmail.com"
+              git config --global user.name "DaniCFraq"
+              git config --global user.password "${{ secrets.PASSWORD }}"
+
+
           - name: Add client repository as remote
             run: |
               git remote add client https://x-access-token:${{ secrets.CLIENT_REPO_TOKEN }}@github.com/DaniCFraq/cicd-clientrepo.git
