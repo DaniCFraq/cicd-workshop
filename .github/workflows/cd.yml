@@ -33,7 +33,7 @@ jobs:
           
           - name: Add client repository as remote
             run: |
-              git remote add client https://x-access-token:${{ secrets.CLIENT_REPO_TOKEN }}@github.com/DaniCFrq/cicd-clientrepo.git
+              git remote add client https://x-access-token:${{ secrets.CLIENT_REPO_TOKEN }}@github.com/DaniCFraq/cicd-clientrepo.git
 
           - name: Push changes to client repository
             run: |
